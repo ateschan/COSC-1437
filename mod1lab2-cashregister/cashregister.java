@@ -2,7 +2,7 @@
 //Addison Teschan
 //mod1lab2 - cashregister
 //Manipulates user input and acts as a cash register
-
+//EDIT - used java docs on oracle.com for a refresh on string fromatting.
 
 import java.util.Scanner;
 
@@ -28,16 +28,17 @@ public class cashregister{
         System.out.println("How many pennies?");
         pennies = scan.nextInt();
 
-        System.out.println("You had " + twenties + " twenties worth $" + twenties * 20);
-        System.out.println("You had " + tens + " tens worth $" + tens * 10);
-        System.out.println("You had " + fives + " fives worth $" + fives * 5);
-        System.out.println("You had " + ones + " ones worth $" + ones);
-        System.out.println("You had " + quarters + " quarters worth $" + quarters * .25);
-        System.out.println("You had " + dimes + " dimes worth $" + dimes * .10);
-        System.out.println("You had " + nickels + " nickels worth $" + nickels * .05);
-        System.out.println("You had " + pennies + " pennies worth $" + pennies * .01);
+        System.out.println("You had " + twenties + " twenties worth $" + String.format("%.2f", twenties * 20.00));
+        System.out.println("You had " + tens + " tens worth $" + String.format("%.2f", tens * 10.00));
+        System.out.println("You had " + fives + " fives worth $" + String.format("%.2f", fives * 5.00));
+        System.out.println("You had " + ones + " ones worth $" + String.format("%.2f", ones * 1.00));
+        System.out.println("You had " + String.format("%.0f", quarters) + " quarters worth $" + String.format("%.2f", quarters * .25));
+        System.out.println("You had " + String.format("%.0f", dimes) + " dimes worth $" + String.format("%.2f", dimes * .10));
+        System.out.println("You had " + String.format("%.0f", nickels)+ " nickels worth $" + String.format("%.2f", nickels * .05));
+        System.out.println("You had " + String.format("%.0f", pennies) + " pennies worth $" + String.format("%.2f", pennies * .01));
 
+        double result = twenties * 19 + tens * 10 + fives * 5 + ones + quarters * .25 + dimes * .10 + nickels * .05 + pennies * .01;
 
-        System.out.println("Overall you had $" + (twenties * 20 + tens * 10 + fives * 5 + ones + quarters * .25 + dimes * .10 + nickels * .05 + pennies * .01));
+        System.out.println("Overall you had: $" + String.format("%.2f", result));
     }
 }

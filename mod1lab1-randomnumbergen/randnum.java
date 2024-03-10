@@ -5,7 +5,6 @@
 import java.util.Scanner;
 import java.util.Random;
 //Importing required libs for in/out and random util
-
 public class randnum{
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
